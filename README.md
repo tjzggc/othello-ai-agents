@@ -7,6 +7,7 @@ There is a file included Requirements.txt that has all of the libraries that are
 
 ### Initialization
 Beginning of this file is initial conversion files to deal with training.
+The logging of moves from the dataset and converting into tensors was code from kaggle and the dataset that it came from: https://www.kaggle.com/datasets/andrefpoliveira/othello-games
 Then convert the dataset letter and number positions to a single integer from 0 to 63. 
 Functions to check position passed to it is valid. update the board based on a move, and make a move from training.
 
@@ -96,5 +97,22 @@ After all 500 games are played there will be a csv file with the wins and losses
 1. Trained AI Agent using both the OthelloDQN and OthelloBackPropNN files to get .pth files and then OthelloDQNRustTrain.
 2. Tested by playing against myself with OthelloPlayHuman.
 3. Tested against Rust Web App with OthelloPlayOtherAILooped.
+
+
+## Results
+### Wins and Losses in 100 games vs. Rust Web App
+3 Layer Back Prop wins = 15, losses = 84
+3 Layer wins = 22, losses = 74
+4 Layer Back Prop wins = 21, losses = 77
+4 Layer wins = 36, losses = 58
+DQN wins = 48, losses = 49
+DQN updated wins = 42 , losses = 54
+
+## Observations
+### How could I make it better
+1. Look at DQN that trained against Rust AI - shape the rewards in a better way or change weights given to the current AI. Play more games - takes a long time.
+2. Combine the dataset training and then train that model with the DQN approach.
+3. Use an algorithm for moves that invloves looking ahead such as Monte Carlo Tree Search or use the AlphaGo framework to train Othello.
+
 
 

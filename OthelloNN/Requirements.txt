@@ -1,0 +1,54 @@
+These are all of the libraries that are being used in the files that I have that are needed to run.
+I will break these libraries into each of the five different files that I created and explain what they are used for in that file.
+
+numpy
+pytorch
+collections
+random
+csv
+selenium
+os
+time
+pandas
+webdriver_manager
+pygame
+
+
+OthelloDQN.py:
+    numpy - Used to handle the board states and put them into arrays.
+    pytorch - Used to create and train the neural network.
+    random - Used to create the epsilon greedy algorithm to balance exploration and exploitation.
+    collections - Used for the memory buffer of the states, rewards, and moves that the network used so that it can be trained on later.
+
+OthelloBackPropNN.py:
+    numpy - Used to handle the inputs and outputs in the dataset after creating arrays.
+    pytorch - Used to create and train the neural network with a TensorDataset and DataLoader. 
+    pandas - Used to process the dataset and get the useable data into a dataframe.
+
+
+OthelloDQNRustTrain.py:
+    numpy - Used to handle the board states and put them into arrays.
+    pytorch - Used to create and train the neural network.
+    random - Used to create the epsilon greedy algorithm to balance exploration and exploitation.
+    collections - Used for the memory buffer of the states, rewards, and moves that the network used so that it can be trained on later.
+    time - Used to create sleep time so that I didn't try to run over the Rust web app AI's turn.
+    csv - Used to save win/loss data while in the training.
+    os - Used to create the file paths. I could have removed this, but left it in since that is how I used it.
+    selenium - Used to control the computer while playing against the Rust web app.
+    webdriver_manager - Used in conjunction with selenium for controlling the web app so that it opened in chrome.
+
+
+OthelloPlayOtherAILooped.py:
+    selenium - Used to control the computer while playing against the Rust web app.
+    numpy - Used to handle the board states and put them into arrays.
+    time - Used to create sleep time so that I didn't try to run over the Rust web app AI's turn.
+    pytorch - Used to load the neural network and use a torch to save board state.
+    csv - Used to save win/loss data while in the testing.
+
+
+OthelloPlayHuman.py:
+    pygame - Used to create and show the othello board. 
+    pytorch - Used to load the neural network and use a torch to save board state.
+    csv - Used to save win/loss data while in the testing.
+    os - Used to create the file paths. I could have removed this, but left it in since that is how I used it.
+    numpy - Used to handle the board states and put them into arrays.

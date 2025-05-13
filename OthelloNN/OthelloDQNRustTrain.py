@@ -329,7 +329,6 @@ for game in range(num_games):
             if game % target_update_freq == 0:
                 target_model.load_state_dict(model.state_dict())
                 print("Target network updated.")
-            if game % 100 == 0:
                 torch.save(model.state_dict(), model_path_update)
                 model.load_state_dict(torch.load(model_path_update, map_location=device)) # Load the newly saved model to continue training.
                 print("Model saved.")
